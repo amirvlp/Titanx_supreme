@@ -1,0 +1,7 @@
+ccxt
+transformers
+streamlit
+plotly
+streamlit-autorefresh
+pandas
+numpy
