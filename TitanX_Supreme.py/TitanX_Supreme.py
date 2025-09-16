@@ -41,9 +41,17 @@ if stop_trading:
 
 with tabs[0]:
     st.title("TitanX Supreme — Overview")
+    try:
     balance = exchange.fetch_balance()["total"]
     usdt_balance = balance.get("USDT", 0)
     st.write(f"KuCoin Balance: ${usdt_balance:.2f}")
+except ccxt.AuthenticationError:
+    st.error("❌ KuCoin authentication failed. Please check your API keys.")
+    usdt_balance = 0
+except Exception as e:
+    st.error(f"Unexpected error: {e}")
+    usdt_balance = 0
+
     trade_limit = st.slider("Max Trade Allocation ($)", min_value=10, max_value=int(usdt_balance), value=10)
     st.write("Total Trades: " + str(len(trade_history)))
     st.write("Transactions: " + str(len(trade_history)))
