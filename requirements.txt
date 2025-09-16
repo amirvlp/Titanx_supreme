@@ -1,8 +1,9 @@
-ccxt
-transformers
 streamlit
+ccxt
 plotly
-streamlit-autorefresh
 pandas
 numpy
-torch==2.0.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+streamlit-autorefresh
+transformers==4.33.2
+torch==2.0.1
+
