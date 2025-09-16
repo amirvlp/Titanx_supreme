@@ -5,3 +5,4 @@ plotly
 streamlit-autorefresh
 pandas
 numpy
+torch
