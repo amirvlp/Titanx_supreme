@@ -4,6 +4,4 @@ plotly
 pandas
 numpy
 streamlit-autorefresh
-transformers==4.33.2
-torch==2.0.1
 
