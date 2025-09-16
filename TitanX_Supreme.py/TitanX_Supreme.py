@@ -41,7 +41,8 @@ if stop_trading:
 
 with tabs[0]:
     st.title("TitanX Supreme — Overview")
-    try:
+
+try:
     balance = exchange.fetch_balance()["total"]
     usdt_balance = balance.get("USDT", 0)
     st.write(f"KuCoin Balance: ${usdt_balance:.2f}")
