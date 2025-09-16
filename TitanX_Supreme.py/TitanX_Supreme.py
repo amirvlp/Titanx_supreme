@@ -2,6 +2,7 @@ import streamlit as st
 import ccxt
 import plotly.graph_objects as go
 from transformers import pipeline
+import torch
 from streamlit_autorefresh import st_autorefresh
 import numpy as np
 import pandas as pd
