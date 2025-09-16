@@ -42,14 +42,13 @@ if stop_trading:
 with tabs[0]:
     st.title("TitanX Supreme — Overview")
 
-    try:
-        # Fetch full balance object from KuCoin Trading account
-        full_balance = exchange.fetch_balance({"type": "trade"})
-        st.write("Full Balance Response:", full_balance)  # Optional: for debugging
-        usdt_balance = full_balance["total"].get("USDT", 0)
-    except Exception as e:
-        st.error(f"Balance fetch failed: {e}")
-        usdt_balance = 0
+try:
+    balance = exchange.fetch_balance({"type": "trade"})["total"]
+    usdt_balance = balance.get("USDT", 0)
+except Exception:
+    usdt_balance = 0
+
+st.write(f"KuCoin Balance: ${usdt_balance:.2f}")
 
     st.write(f"KuCoin Balance: ${usdt_balance:.2f}")
 
